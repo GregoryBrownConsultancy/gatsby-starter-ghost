@@ -22,7 +22,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
-
+    let dt = new Date()
+    const year = dt.getFullYear()
     return (
         <>
             <Helmet>
@@ -82,7 +83,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2019 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                                <Link to="/">{site.title}</Link> © {year}
                             </div>
                             <div className="site-foot-nav-right">
                                 <Navigation data={site.navigation} navClass="site-foot-nav-item" />
