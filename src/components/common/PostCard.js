@@ -7,7 +7,7 @@ import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 const PostCard = ({ post }) => {
     const url = `/${post.slug}/`
     const readingTime = readingTimeHelper(post)
-
+    console.log(post)
     return (
         <Link to={url} className="post-card">
             <header className="post-card-header">
@@ -19,7 +19,7 @@ const PostCard = ({ post }) => {
                 {post.featured && <span>Featured</span>}
                 <h2 className="post-card-title">{post.title}</h2>
             </header>
-            <section className="post-card-excerpt">{post.excerpt}</section>
+            <section className="post-card-excerpt"><div style={{backgroundColor:'#f60'}}>{post.excerpt}</div></section>
             <footer className="post-card-footer">
                 <div className="post-card-footer-left">
                     <div className="post-card-avatar">
